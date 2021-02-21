@@ -1,0 +1,1196 @@
+@charset "UTF-8";
+/*
+Theme Name: GloriaFood Restaurant
+Theme URI: https://www.gloriafood.com/wordpress-restaurant-theme-with-online-ordering
+Author: GloriaFood
+Author URI: https://gloriafood.com/
+Description: This theme is great for building a restaurant website with online ordering in no time at all. The design is sales oriented, focusing on the true needs of a restaurant client. The theme uses the GloriaFood plugin to enable restaurants take online orders and table reservations free of charge. Setting up the theme and the plugin is very easy. And together, they unlock big (free) features, from online ordering to receipt printing and website statistics.<br>Check out our demo website at https://pronto-wp.com.
+Requires at least: WordPress 4.9.6
+Version: 1.0.5
+Tested up to: 5.5
+Requires PHP: 5.2.4
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl.html
+Text Domain: gloriafood-restaurant
+Tags: e-commerce, food-and-drink, grid-layout, one-column, custom-header, custom-logo, custom-colors, custom-background, custom-menu, footer-widgets, theme-options, featured-images, sticky-post, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+/** WordPress core classes - START **/
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+.sticky {
+    display: block;
+}
+
+.gallery-caption {
+    display: block;
+    font-size: 0.71111em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+/** WordPress core classes - EMD **/
+
+/** Handle admin bar - START **/
+body.admin-bar .navbar {
+    top: 32px;
+}
+
+@media only screen and (max-width: 782px) {
+
+    body.admin-bar .navbar {
+        top: 46px;
+    }
+
+}
+
+/** Handle admin bar - END **/
+
+/** GloriaFood plugin - START **/
+.gloriafood-button,
+.glf-button {
+    padding: 12px !important;
+}
+
+.gloriafood-button.reservation,
+.glf-button.reservation {
+    padding: 12px !important;
+}
+
+.jumbotron .gloriafood-button,
+.jumbotron .glf-button,
+#glf-navigation-order-buttons .gloriafood-button,
+#glf-navigation-order-buttons .glf-button {
+    margin-left: 0.5rem;
+    background-image: none;
+    box-shadow: none;
+}
+
+.jumbotron .gloriafood-button.reservation,
+.jumbotron .glf-button.reservation,
+#glf-navigation-order-buttons .gloriafood-button.reservation,
+#glf-navigation-order-buttons .glf-button.reservation {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    background-image: none;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    #glf-navigation-order-buttons {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .jumbotron .gloriafood-button,
+    .jumbotron .glf-button,
+    #glf-navigation-order-buttons .gloriafood-button,
+    #glf-navigation-order-buttons .glf-button {
+        margin-left: 0;
+    }
+
+    .jumbotron .gloriafood-button.reservation,
+    .jumbotron .glf-button.reservation,
+    #glf-navigation-order-buttons .gloriafood-button.reservation,
+    #glf-navigation-order-buttons .glf-button.reservation {
+        margin-right: 0;
+    }
+}
+
+/** GloriaFood plugin - END **/
+
+/** Custom order buttons - START **/
+.glf-button.custom-order-button {
+    background-color: #f09c49;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.glf-button.reservation.custom-reservation-button {
+    background-color: #fff;
+    color: #f09c49;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media (max-width: 576px) {
+    .glf-button.custom-order-button {
+        margin-top: 0.5rem;
+    }
+}
+
+/** Custom order buttons - START **/
+
+/** Equalize CTA buttons - START **/
+p.jumbotron-cta-buttons {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+p.jumbotron-cta-buttons span,
+p.jumbotron-cta-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    p.jumbotron-cta-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+/** Equalize CTA buttons - END **/
+
+/** General styles - START **/
+body {
+    padding-top: 5rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+footer.site-footer {
+    color: #717171;
+}
+
+a,
+a:hover,
+a:focus {
+    color: #f09c49;
+    text-decoration: none;
+}
+
+.custom-logo {
+    height: 3rem;
+    width: auto;
+}
+
+span.menu-item-link-return {
+    display: none;
+}
+
+span.glf-card-subbtitle-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.5rem;
+}
+
+span.glf-card-subtitle-dash {
+    width: 1.5rem;
+    border-bottom: 1px solid #f09c49;
+    margin-right: 1rem;
+    display: block;
+}
+
+span.glf-card-subtitle {
+    color: #f09c48;
+    font-weight: 600;
+    display: block;
+    text-transform: uppercase;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .jumbotron-description-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.jumbotron span.jumbotron-description-left-dash {
+    width: 1.5rem;
+    border-bottom: 1px solid #fff;
+    margin-right: 1rem;
+    display: block;
+}
+
+.jumbotron span.jumbotron-description-right-dash {
+    width: 1.5rem;
+    border-bottom: 1px solid #fff;
+    margin-left: 1rem;
+    display: block;
+}
+
+.jumbotron h2.jumbotron-description {
+    font-weight: 600;
+    color: #fff;
+    display: block;
+}
+
+.jumbotron span.jumbotron-description.lead {
+    color: #fff;
+}
+
+.glf-card {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+}
+
+.glf-card.glf-card-gallery {
+    padding-bottom: 5.5rem;
+}
+
+.glf-coverify-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.glf-gallery-image {
+    margin-bottom: 2rem;
+}
+
+div.widget_glf-promo-cards > div.row {
+    margin-top: -2rem;
+}
+
+.glf-promo-card-supercontainer {
+    margin-top: 2rem;
+}
+
+.glf-promo-card-container {
+    padding: 0.625rem;
+    background-color: #fff;
+    height: 100%;
+    box-shadow: 0 15px 30px 00 rgba(0, 0, 0, 0.07);
+}
+
+.glf-about-card-text {
+    padding-top: 2.5rem;
+}
+
+@media (max-width: 767px) {
+    .glf-about-card-image {
+        margin-bottom: 1rem;
+    }
+
+    .glf-about-card-image:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .glf-promo-card-supercontainer:last-child {
+        margin-bottom: 0;
+    }
+
+    .glf-about-card-text {
+        margin-bottom: 2rem;
+        padding-top: 0;
+    }
+}
+
+.glf-promo-card {
+    border: 0.0625rem solid #f09c48;
+    padding: 1.8125rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.glf-promo-card span.glf-card-subbtitle-container {
+    margin-bottom: 2rem;
+}
+
+.glf-promo-card-price {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    color: #f09c48;
+    display: inline-block;
+    font-style: italic;
+    margin-top: auto;
+}
+
+.glf-promo-card-price-value {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+footer.entry-footer {
+    padding: 2rem 0;
+    clear: both;
+}
+
+footer.site-footer {
+    background-color: #242424;
+    color: #717171;
+    padding: 4rem 0;
+    font-size: 0.875rem;
+}
+
+footer.site-footer * {
+    color: #717171;
+}
+
+footer.site-footer *.widget-title {
+    color: #fff;
+}
+
+footer.site-footer ul {
+    list-style: none;
+    padding-left: 0;
+    color: #7b7b7b;
+}
+
+footer.site-footer a,
+footer.site-footer a:hover,
+footer.site-footer a:focus {
+    color: #7b7b7b;
+}
+
+.navbar {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: 5rem;
+    background-color: #fff;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.07);
+}
+
+.navbar .navbar-nav a {
+    color: #242424;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+.navbar .navbar-brand img.navbar-logo {
+    height: 3rem;
+    width: auto;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 10rem 2rem;
+        margin-bottom: 0;
+    }
+
+    .home .jumbotron {
+        padding: 13rem 2rem;
+        margin-bottom: 0;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.jumbotron {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/starter/header.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.container-fluid.glf-background-card:nth-child(6n+2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/starter/background-1.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.container-fluid.glf-background-card:nth-child(6n+4) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/starter/background-2.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.container-fluid.glf-background-card:nth-child(6n+6) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/starter/background-3.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.jumbotron {
+    border-radius: 0;
+}
+
+figure.post-thumbnail img.attachment-post-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+body.blog article,
+body.archive article {
+    border-bottom: 1px solid #d0d0d0;
+    margin-bottom: 2rem;
+}
+
+body.blog article:last-child,
+body.archive article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+time:nth-child(2) {
+    display: none;
+}
+
+/** General styles - END **/
+
+/** Typography - START **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h2 a {
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-style: italic;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+h1 {
+    font-size: 3.125rem;
+    line-height: 3.25rem;
+}
+
+.jumbotron h1 {
+    color: #fff;
+}
+
+.home h1 {
+    margin-bottom: 3rem;
+}
+
+h1.lead {
+    font-size: 2.75rem;
+    line-height: 3rem;
+}
+
+@media (min-width: 576px) {
+    h1.lead {
+        font-size: 4.625rem;
+        line-height: 5rem;
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+h2.jumbotron-description-container {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    line-height: 1.5625rem;
+    color: #fff;
+}
+
+h3 {
+    font-size: 1.75rem;
+    line-height: 2.1875rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+}
+
+footer h4 {
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+h5 {
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+}
+
+h6 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+}
+
+.small {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.caption {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+}
+
+.subtitle {
+    font-size: 0.875rem;
+    line-height: 1rem;
+}
+
+.subtitle-small {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+}
+
+/** Typography - START **/
+
+/** Non-home pages - START **/
+main {
+    padding: 7.5rem 0;
+}
+
+.home main {
+    padding: 0;
+}
+
+.home.blog main {
+    padding: 7.5rem 0;
+}
+
+/** Non-home pages - END **/
+
+/** Mobile spacing - START **/
+@media (max-width: 768px) {
+    body {
+        padding-top: 4.5rem;
+    }
+
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding: 1rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+        height: auto;
+        min-height: 4.5rem;
+    }
+
+    .navbar .navbar-toggler {
+        outline: none;
+    }
+
+    .fixed-top {
+        position: absolute;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid.header-container {
+        padding: 0
+    }
+
+    .jumbotron {
+        padding: 5rem 2rem 2.5rem;
+        margin-bottom: 0;
+    }
+
+    .jumbotron span.jumbotron-description-left-dash,
+    .jumbotron span.jumbotron-description-right-dash {
+        display: none;
+    }
+
+    .jumbotron .jumbotron-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        margin-bottom: 2.25rem;
+    }
+
+    .glf-card {
+        padding: 3rem 0 3.5rem 0;
+    }
+
+    .glf-card.glf-card-gallery {
+        padding-bottom: 2.5rem;
+    }
+
+    .glf-gallery-image {
+        margin-bottom: 1rem;
+    }
+
+    .glf-gallery-image:nth-child(2n) {
+        padding-left: 0.5rem;
+    }
+
+    .glf-gallery-image:nth-child(2n+1) {
+        padding-right: 0.5rem;
+    }
+
+    .container-fluid.glf-card {
+        padding: 3.5rem 0;
+    }
+
+    span.glf-card-subbtitle-container {
+        margin-bottom: 2rem;
+    }
+
+    footer {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    footer p {
+        margin-bottom: 1.5rem;
+    }
+
+    footer h4 {
+        margin-bottom: 1.5rem;
+    }
+
+    main {
+        padding: 3.5rem 0;
+    }
+
+    .home.blog main {
+        padding: 3.5rem 0;
+    }
+}
+
+@media (max-width: 448px) {
+    .jumbotron .btn {
+        margin-bottom: 1.25rem;
+    }
+
+    .jumbotron .btn:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+/** Mobile spacing - END **/
+
+/** Tablets spacing - START **/
+@media (min-width: 577px) and (max-width: 1400px) {
+    .glf-card {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .glf-card.glf-card-gallery {
+        padding-bottom: 3rem;
+    }
+
+    span.glf-card-subbtitle-container {
+        margin-bottom: 2rem;
+    }
+
+    main {
+        padding: 5rem 0;
+    }
+
+    .home.blog main {
+        padding: 5rem 0;
+    }
+}
+
+/** Tablets spacing - END **/
+
+/** Comment form - START **/
+div#comments {
+    margin-top: 3.5rem;
+}
+
+div#comments ol {
+    list-style: none;
+}
+
+div#comments ol.comment-list {
+    padding-left: 1rem;
+}
+
+div#comments ol.comment-list article {
+    margin-bottom: 1rem;
+}
+
+form.comment-form {
+    max-width: 50rem;
+}
+
+form.comment-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form.comment-form label {
+    display: block;
+}
+
+form.comment-form p {
+    padding: 0 1rem;
+}
+
+form.comment-form p.comment-notes {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+form.comment-form p.comment-form-comment {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+form.comment-form textarea#comment {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+form.comment-form p.comment-form-author,
+form.comment-form p.comment-form-email,
+form.comment-form p.comment-form-url {
+    width: 50%;
+    flex: 0 0 50%;
+}
+
+form.comment-form p.comment-form-author input,
+form.comment-form p.comment-form-email input,
+form.comment-form p.comment-form-url input {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+form.comment-form p.form-submit {
+    flex: 0 0 100%;
+}
+
+form.comment-form p.form-submit input.submit {
+    background-color: #f09c48;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    outline: none;
+}
+
+/** Comment form - END **/
+
+/** Post navigation links - START **/
+nav.post-navigation div.nav-links {
+    display: flex;
+}
+
+nav.post-navigation div.nav-links div.nav-next {
+    margin-left: auto;
+    text-align: right;
+}
+
+/** Post navigation links - END **/
+
+/** Frontend thickbox for galleries - START **/
+div#TB_caption,
+div#TB_closeWindow {
+    padding: 0 1rem;
+}
+
+button#TB_closeWindowButton:focus .tb-close-icon {
+    outline: none;
+    box-shadow: none;
+}
+
+/** Frontend thickbox for galleries - END **/
+
+/** Navigation - START **/
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 0.875rem;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #f09c48;
+}
+
+.navbar .navbar-nav a.dropdown-item.active, .navbar .navbar-nav a.dropdown-item:active {
+    color: #fff;
+    background-color: #f09c48;
+}
+
+/** Navigation - END **/
+
+/**  Restaurant menu from plugin - START **/
+.glf-mor-restaurant-menu-wrapper {
+    margin-top: 3rem;
+}
+
+.glf-mor-restaurant-menu-wrapper .glf-mor-restaurant-menu-category {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.glf-mor-restaurant-menu-item {
+    margin-bottom: 0 !important;
+    flex: 0 0 50%;
+    display: flex;
+}
+
+.glf-mor-restaurant-menu-item-inner {
+    border-bottom: 1px solid #eee;
+    padding: 1.5rem 0;
+    flex: 0 0 100%;
+}
+
+.glf-mor-restaurant-menu-wrapper .glf-mor-restaurant-menu-category .glf-mor-restaurant-menu-item:nth-of-type(2n+1) {
+    padding-right: 4rem;
+}
+
+.glf-mor-restaurant-menu-wrapper .glf-mor-restaurant-menu-category .glf-mor-restaurant-menu-item:nth-of-type(2n+2) {
+    padding-left: 4rem;
+}
+
+.glf-mor-restaurant-menu-wrapper .glf-mor-restaurant-menu-category h3 {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    flex: 0 0 100%;
+}
+
+.glf-mor-restaurant-menu-item-name {
+    margin-bottom: 0;
+}
+
+.glf-mor-restaurant-menu-item-price {
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+}
+
+.glf-mor-restaurant-menu-item-description {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #6f6f6f;
+}
+
+@media (max-width: 992px) {
+    .glf-mor-restaurant-menu-item {
+        flex: 0 0 100%;
+    }
+
+    .glf-mor-restaurant-menu-wrapper .glf-mor-restaurant-menu-category .glf-mor-restaurant-menu-item:nth-of-type(2n+1) {
+        padding-right: 0;
+    }
+
+    .glf-mor-restaurant-menu-wrapper .glf-mor-restaurant-menu-category .glf-mor-restaurant-menu-item:nth-of-type(2n+2) {
+        padding-left: 0;
+    }
+}
+
+/**  Restaurant menu from plugin - END **/
+
+div.glf-background-card:nth-child(2n+2) div.widget {
+    width: 100%;
+    background-color: #fff;
+    padding: 1.8125rem;
+    border: 0.625rem solid #fff;
+    box-shadow: inset 0 0 0 1px #f09c48;
+}
+
+div.glf-background-card:nth-child(2n+2) div.widget.widget_glf-promo-cards {
+    width: auto;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+/** Galleries - START **/
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: calc(1.5 * 1rem);
+}
+
+.gallery-item {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: calc((100% - 16px * 1) / 2);
+}
+
+.gallery-columns-2 .gallery-item:nth-of-type(2n+2) {
+    margin-right: 0;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: calc((100% - 16px * 2) / 3);
+}
+
+.gallery-columns-3 .gallery-item:nth-of-type(3n+3) {
+    margin-right: 0;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: calc((100% - 16px * 3) / 4);
+}
+
+.gallery-columns-4 .gallery-item:nth-of-type(4n+4) {
+    margin-right: 0;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: calc((100% - 16px * 4) / 5);
+}
+
+.gallery-columns-5 .gallery-item:nth-of-type(5n+5) {
+    margin-right: 0;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: calc((100% - 16px * 5) / 6);
+}
+
+.gallery-columns-6 .gallery-item:nth-of-type(6n+6) {
+    margin-right: 0;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: calc((100% - 16px * 6) / 7);
+}
+
+.gallery-columns-7 .gallery-item:nth-of-type(7n+7) {
+    margin-right: 0;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: calc((100% - 16px * 7) / 8);
+}
+
+.gallery-columns-8 .gallery-item:nth-of-type(8n+8) {
+    margin-right: 0;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: calc((100% - 16px * 8) / 9);
+}
+
+.gallery-columns-9 .gallery-item:nth-of-type(9n+9) {
+    margin-right: 0;
+}
+
+.gallery-item:last-of-type {
+    padding-right: 0;
+}
+
+.gallery-caption {
+    display: block;
+    font-size: 0.71111em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.gallery-item > div > a {
+    display: block;
+    line-height: 0;
+    box-shadow: 0 0 0 0 transparent;
+}
+
+.gallery-item > div > a:focus {
+    box-shadow: 0 0 0 2px #0073aa;
+}
+
+/** Galleries - END **/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+div.page-links {
+    clear: both;
+}
+
+li.pingback {
+    margin-bottom: 1rem;
+}
+
+/** Sticky posts - START **/
+span.sticky-post {
+    background: #f09c49;
+    color: white;
+    padding: 5px;
+    display: inline-block;
+    width: auto;
+    margin-left: -1rem;
+}
+
+body.blog article.sticky,
+body.archive article.sticky {
+    border: 2px solid #f09c49;
+    padding: 0 1rem;
+}
+
+/** Sticky posts - END **/
+
+blockquote {
+    padding-left: 1rem;
+    border-left: 0.25rem solid #f09c49;
+}
+
+th,
+td {
+    padding: 0.25rem;
+}
+
+/** Sticky order buttons - START **/
+#glf-footer-navigation-order-buttons {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+#glf-footer-navigation-order-buttons > span,
+#glf-footer-navigation-order-buttons > a {
+    width: 50%;
+    display: block;
+    text-align: center;
+    border-radius: 0;
+    margin: 0;
+}
+
+/** Sticky order buttons - END **/

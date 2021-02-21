@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'GLFIcons';
+    src: url('glf_icons.eot');
+    src: url('glf_icons.eot?#iefix') format('embedded-opentype'),
+    url('glf_icons.woff') format('woff'),
+    url('glf_icons.ttf') format('truetype'),
+    url('glf_icons.svg#glf_icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class*='icon-']:before{
+    display: inline-block;
+    font-family: 'GLFIcons';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.icon-text-image:before{content:'\0041';}
+.icon-promo-cards:before{content:'\0042';}
+.icon-photo-gallery:before{content:'\0043';}
