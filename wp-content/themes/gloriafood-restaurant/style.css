@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*
 Theme Name: GloriaFood Restaurant
 Theme URI: https://www.gloriafood.com/wordpress-restaurant-theme-with-online-ordering
@@ -17,7 +18,9 @@ Tags: e-commerce, food-and-drink, grid-layout, one-column, custom-header, custom
 This theme, like WordPress, is licensed under the GPL.
 */
 
+
 /** WordPress core classes - START **/
+
 .alignnone {
     margin: 5px 20px 20px 0;
 }
@@ -61,7 +64,8 @@ a img.aligncenter {
 .wp-caption {
     background: #fff;
     border: 1px solid #f0f0f0;
-    max-width: 96%; /* Image does not overflow the content area */
+    max-width: 96%;
+    /* Image does not overflow the content area */
     padding: 5px 3px 10px;
     text-align: center;
 }
@@ -141,32 +145,38 @@ a img.aligncenter {
     display: block;
 }
 
+
 /** WordPress core classes - EMD **/
 
+
 /** Handle admin bar - START **/
+
 body.admin-bar .navbar {
     top: 32px;
 }
 
 @media only screen and (max-width: 782px) {
-
     body.admin-bar .navbar {
         top: 46px;
     }
-
 }
+
 
 /** Handle admin bar - END **/
 
+
 /** GloriaFood plugin - START **/
+
 .gloriafood-button,
 .glf-button {
     padding: 12px !important;
+    color: #f09c49 !important;
 }
 
 .gloriafood-button.reservation,
 .glf-button.reservation {
     padding: 12px !important;
+	background-color: #f09c49 !important;
 }
 
 .jumbotron .gloriafood-button,
@@ -201,7 +211,6 @@ body.admin-bar .navbar {
     #glf-navigation-order-buttons .glf-button {
         margin-left: 0;
     }
-
     .jumbotron .gloriafood-button.reservation,
     .jumbotron .glf-button.reservation,
     #glf-navigation-order-buttons .gloriafood-button.reservation,
@@ -210,9 +219,12 @@ body.admin-bar .navbar {
     }
 }
 
+
 /** GloriaFood plugin - END **/
 
+
 /** Custom order buttons - START **/
+
 .glf-button.custom-order-button {
     background-color: #f09c49;
     color: #fff;
@@ -235,9 +247,12 @@ body.admin-bar .navbar {
     }
 }
 
+
 /** Custom order buttons - START **/
 
+
 /** Equalize CTA buttons - START **/
+
 p.jumbotron-cta-buttons {
     display: inline-grid;
     grid-template-columns: 1fr 1fr;
@@ -256,9 +271,12 @@ p.jumbotron-cta-buttons a {
     }
 }
 
+
 /** Equalize CTA buttons - END **/
 
+
 /** General styles - START **/
+
 body {
     padding-top: 5rem;
     font-family: 'Open Sans', sans-serif;
@@ -364,7 +382,7 @@ span.glf-card-subtitle {
     margin-bottom: 2rem;
 }
 
-div.widget_glf-promo-cards > div.row {
+div.widget_glf-promo-cards>div.row {
     margin-top: -2rem;
 }
 
@@ -387,7 +405,6 @@ div.widget_glf-promo-cards > div.row {
     .glf-about-card-image {
         margin-bottom: 1rem;
     }
-
     .glf-about-card-image:last-child {
         margin-bottom: 0;
     }
@@ -397,7 +414,6 @@ div.widget_glf-promo-cards > div.row {
     .glf-promo-card-supercontainer:last-child {
         margin-bottom: 0;
     }
-
     .glf-about-card-text {
         margin-bottom: 2rem;
         padding-top: 0;
@@ -493,12 +509,10 @@ footer.site-footer a:focus {
         padding: 10rem 2rem;
         margin-bottom: 0;
     }
-
     .home .jumbotron {
         padding: 13rem 2rem;
         margin-bottom: 0;
     }
-
     .container,
     .container-fluid {
         padding-left: 0;
@@ -555,9 +569,12 @@ time:nth-child(2) {
     display: none;
 }
 
+
 /** General styles - END **/
 
+
 /** Typography - START **/
+
 h1,
 h2,
 h3,
@@ -662,9 +679,12 @@ h6 {
     line-height: 0.875rem;
 }
 
+
 /** Typography - START **/
 
+
 /** Non-home pages - START **/
+
 main {
     padding: 7.5rem 0;
 }
@@ -677,28 +697,27 @@ main {
     padding: 7.5rem 0;
 }
 
+
 /** Non-home pages - END **/
 
+
 /** Mobile spacing - START **/
+
 @media (max-width: 768px) {
     body {
         padding-top: 4.5rem;
     }
-
     .navbar-expand-md .navbar-nav .nav-link {
         padding: 1rem;
     }
-
     .navbar {
         padding: 0.5rem 1rem;
         height: auto;
         min-height: 4.5rem;
     }
-
     .navbar .navbar-toggler {
         outline: none;
     }
-
     .fixed-top {
         position: absolute;
     }
@@ -708,71 +727,55 @@ main {
     .container-fluid.header-container {
         padding: 0
     }
-
     .jumbotron {
         padding: 5rem 2rem 2.5rem;
         margin-bottom: 0;
     }
-
     .jumbotron span.jumbotron-description-left-dash,
     .jumbotron span.jumbotron-description-right-dash {
         display: none;
     }
-
     .jumbotron .jumbotron-description {
         margin-left: auto;
         margin-right: auto;
     }
-
     h1 {
         margin-bottom: 2.25rem;
     }
-
     .glf-card {
         padding: 3rem 0 3.5rem 0;
     }
-
     .glf-card.glf-card-gallery {
         padding-bottom: 2.5rem;
     }
-
     .glf-gallery-image {
         margin-bottom: 1rem;
     }
-
     .glf-gallery-image:nth-child(2n) {
         padding-left: 0.5rem;
     }
-
     .glf-gallery-image:nth-child(2n+1) {
         padding-right: 0.5rem;
     }
-
     .container-fluid.glf-card {
         padding: 3.5rem 0;
     }
-
     span.glf-card-subbtitle-container {
         margin-bottom: 2rem;
     }
-
     footer {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
     }
-
     footer p {
         margin-bottom: 1.5rem;
     }
-
     footer h4 {
         margin-bottom: 1.5rem;
     }
-
     main {
         padding: 3.5rem 0;
     }
-
     .home.blog main {
         padding: 3.5rem 0;
     }
@@ -782,42 +785,42 @@ main {
     .jumbotron .btn {
         margin-bottom: 1.25rem;
     }
-
     .jumbotron .btn:last-child {
         margin-bottom: 0;
     }
-
 }
+
 
 /** Mobile spacing - END **/
 
+
 /** Tablets spacing - START **/
+
 @media (min-width: 577px) and (max-width: 1400px) {
     .glf-card {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
-
     .glf-card.glf-card-gallery {
         padding-bottom: 3rem;
     }
-
     span.glf-card-subbtitle-container {
         margin-bottom: 2rem;
     }
-
     main {
         padding: 5rem 0;
     }
-
     .home.blog main {
         padding: 5rem 0;
     }
 }
 
+
 /** Tablets spacing - END **/
 
+
 /** Comment form - START **/
+
 div#comments {
     margin-top: 3.5rem;
 }
@@ -893,9 +896,12 @@ form.comment-form p.form-submit input.submit {
     outline: none;
 }
 
+
 /** Comment form - END **/
 
+
 /** Post navigation links - START **/
+
 nav.post-navigation div.nav-links {
     display: flex;
 }
@@ -905,9 +911,12 @@ nav.post-navigation div.nav-links div.nav-next {
     text-align: right;
 }
 
+
 /** Post navigation links - END **/
 
+
 /** Frontend thickbox for galleries - START **/
+
 div#TB_caption,
 div#TB_closeWindow {
     padding: 0 1rem;
@@ -918,29 +927,36 @@ button#TB_closeWindowButton:focus .tb-close-icon {
     box-shadow: none;
 }
 
+
 /** Frontend thickbox for galleries - END **/
 
+
 /** Navigation - START **/
+
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0, 0, 0, 0.9);
     font-size: 0.875rem;
 }
 
-.navbar-light .navbar-nav .show > .nav-link,
-.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .active>.nav-link,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .nav-link.active {
     color: #f09c48;
 }
 
-.navbar .navbar-nav a.dropdown-item.active, .navbar .navbar-nav a.dropdown-item:active {
+.navbar .navbar-nav a.dropdown-item.active,
+.navbar .navbar-nav a.dropdown-item:active {
     color: #fff;
     background-color: #f09c48;
 }
 
+
 /** Navigation - END **/
 
+
 /**  Restaurant menu from plugin - START **/
+
 .glf-mor-restaurant-menu-wrapper {
     margin-top: 3rem;
 }
@@ -1000,15 +1016,14 @@ button#TB_closeWindowButton:focus .tb-close-icon {
     .glf-mor-restaurant-menu-item {
         flex: 0 0 100%;
     }
-
     .glf-mor-restaurant-menu-wrapper .glf-mor-restaurant-menu-category .glf-mor-restaurant-menu-item:nth-of-type(2n+1) {
         padding-right: 0;
     }
-
     .glf-mor-restaurant-menu-wrapper .glf-mor-restaurant-menu-category .glf-mor-restaurant-menu-item:nth-of-type(2n+2) {
         padding-left: 0;
     }
 }
+
 
 /**  Restaurant menu from plugin - END **/
 
@@ -1028,7 +1043,9 @@ div.glf-background-card:nth-child(2n+2) div.widget.widget_glf-promo-cards {
     box-shadow: none;
 }
 
+
 /** Galleries - START **/
+
 .gallery {
     display: flex;
     flex-flow: row wrap;
@@ -1122,15 +1139,16 @@ div.glf-background-card:nth-child(2n+2) div.widget.widget_glf-promo-cards {
     padding: 0.5rem;
 }
 
-.gallery-item > div > a {
+.gallery-item>div>a {
     display: block;
     line-height: 0;
     box-shadow: 0 0 0 0 transparent;
 }
 
-.gallery-item > div > a:focus {
+.gallery-item>div>a:focus {
     box-shadow: 0 0 0 2px #0073aa;
 }
+
 
 /** Galleries - END **/
 
@@ -1147,7 +1165,9 @@ li.pingback {
     margin-bottom: 1rem;
 }
 
+
 /** Sticky posts - START **/
+
 span.sticky-post {
     background: #f09c49;
     color: white;
@@ -1163,6 +1183,7 @@ body.archive article.sticky {
     padding: 0 1rem;
 }
 
+
 /** Sticky posts - END **/
 
 blockquote {
@@ -1175,7 +1196,9 @@ td {
     padding: 0.25rem;
 }
 
+
 /** Sticky order buttons - START **/
+
 #glf-footer-navigation-order-buttons {
     width: 100%;
     position: fixed;
@@ -1184,13 +1207,39 @@ td {
     display: flex;
 }
 
-#glf-footer-navigation-order-buttons > span,
-#glf-footer-navigation-order-buttons > a {
+#glf-footer-navigation-order-buttons>span,
+#glf-footer-navigation-order-buttons>a {
     width: 50%;
     display: block;
     text-align: center;
     border-radius: 0;
     margin: 0;
+}
+
+.gloriafood-button.reservation {
+	background-color: #fff !important;
+	color: #ef8b17 !important;
+} 
+
+.glf-button.reservation {
+	background-color: #fff !important;
+	color: #ef8b17 !important;
+
+} 
+
+
+.gloriafood-button.reservation,
+.glf-button.reservation {
+    background-color: #ef8b17;
+}
+
+.gloriafood-button.reservation:hover {
+    filter: brightness(110%);
+    color: #ef8b17 !important;
+}
+
+.glf-button.reservation:hover {
+	color: #ef8b17 !important;
 }
 
 /** Sticky order buttons - END **/

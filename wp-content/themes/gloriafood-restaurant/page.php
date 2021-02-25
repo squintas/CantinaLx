@@ -17,6 +17,8 @@ if ( is_front_page() ) {
 } else {
 	?>
 
+
+
     <div class="container">
         <section id="primary" class="content-area">
             <main id="main" class="site-main">
@@ -40,6 +42,8 @@ if ( is_front_page() ) {
             </main><!-- #main -->
         </section><!-- #primary -->
     </div>
+
+
 	<?php
 }
 get_footer();
