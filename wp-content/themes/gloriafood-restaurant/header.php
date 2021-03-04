@@ -64,6 +64,12 @@
     </div>
 </nav>
 
+
+<?php
+		if ( is_front_page() ) {
+			?>
+
+
 <div class="container-fluid header-container">
     <div class="jumbotron">
 		<?php
@@ -91,9 +97,14 @@
 			echo "<h1 class='lead'>" . get_the_archive_title() . "</h1>";
 		} elseif ( is_home() ) {
 			echo "<h1 class='lead'>" . get_the_title( get_option( 'page_for_posts', true ) ) . "</h1>";
-		} else {
+		}
+		else {
 			echo "<h1 class='lead'>" . get_the_title() . "</h1>";
 		}
 		?>
     </div>
 </div>
+
+<?php
+	}
+			?>
